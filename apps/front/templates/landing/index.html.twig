@@ -11,6 +11,16 @@
 <div class="example-wrapper">
     <h1>{{ random_greetings }}</h1>
     <p>Let's test a simple <strong><em>Symfony microservices with Docker</em></strong> solution ✅</p>
-    <p>.. TODO ..</p>
+
+    <br/>
+
+    <h4>Generate your key by selecting few options</h4>
+    <label for="name">Choose a name</label>
+    <select id="name" name="name">
+        <option disabled selected>.. select a name ..</option>
+        {% for aname in names %}
+            <option value="{{ aname }}">{{ aname }}</option>
+        {% endfor %}
+    </select>
 </div>
 {% endblock %}
