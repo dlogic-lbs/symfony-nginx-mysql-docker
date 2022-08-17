@@ -1,0 +1,8 @@
+# phpstorm
+.idea/
+
+# mysql data
+mysql/
+
+# custom notes
+notes.txt
