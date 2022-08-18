@@ -17,10 +17,12 @@ This repository shows a simple implementation of Symfony microservices within Do
 ## What could be added ?
 .. but wasn't due to shortness of time:
 
+  -> the database records inserted via simple INSERT query could be added via Symfony Fixtures
+
   -> Messenger
   
   -> PHPUnit
-
+  
 ## Other remarks
 This solution was built in Windows 11 using PHPStorm IDE and Docker Desktop.
 
