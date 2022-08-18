@@ -48,6 +48,8 @@ services:
       - ./apps/front:/var/www/project
     tty: true
     stdin_open: true
+    links:
+      - "nginx_api:nginx_api"
 
   database:
     image: mysql:8

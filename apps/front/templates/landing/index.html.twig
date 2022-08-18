@@ -14,13 +14,26 @@
 
     <br/>
 
-    <p>This page lists some sample movie characters from an API (from another Docker container) that uses yet another MySQL container</p>
-    <p>List of loaded movie characters:</p>
-    <p>TODO</p>
-{#    <ul>#}
-{#        {% for aname in names %}#}
-{#            <li>{{ aname }}</li>#}
-{#        {% endfor %}#}
-{#    </ul>#}
+    <h4>What does this page do ?</h4>
+    <ul>
+        <li>2 Symfony frontend Docker containers (Nginx + PHP) render this simple HTML page</li>
+        <li>2 other Symfony API containers (Nginx + PHP) are contacted via HttpClient GET request</li>
+        <li>the API returns a simple set of movie characters</li>
+        <li>another Docker container (MySQL 8) is used to store the simple data (movie characters)</li>
+        <li>the set of characters is randomly shuffled and displayed on this page</li>
+    </ul>
+
+    <p style="color: darkblue; font-style: italic; font-weight: bolder;">
+        List of loaded movie characters:
+    </p>
+    {% if characters is not empty %}
+        <ul>
+            {% for character in characters %}
+                <li style="color: mediumblue;">{{ character.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p style="color: red;">Sorry, no characters were loaded (?) Try again ?</p>
+    {% endif %}
 </div>
 {% endblock %}
