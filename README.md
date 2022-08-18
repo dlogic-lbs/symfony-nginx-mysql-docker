@@ -15,7 +15,9 @@ This repository shows a simple implementation of Symfony microservices within Do
 
 ## What could be added ?
 .. but wasn't due to shortness of time:
+
   -> Messenger
+  
   -> PHPUnit
 
 ## Other remarks
