@@ -4,6 +4,7 @@ Clone or download this repository to your local machine. CD into the root folder
 dev_fresh.bat
 ```
 .. and hit ENTER.
+Once everithing is built up and ready, open your browser and navigate to http://localhost:8081
 
 ## What is included ?
 5 Docker containers:
