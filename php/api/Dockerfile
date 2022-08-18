@@ -12,8 +12,8 @@ RUN apt update \
     && docker-php-ext-configure zip \
     && docker-php-ext-install zip
 
-COPY ./php/front/php.ini /usr/local/etc/php/conf.d/docker-php-config.ini
-COPY ./apps/front/composer.json /var/www/project/
+COPY ./php/api/php.ini /usr/local/etc/php/conf.d/docker-php-config.ini
+COPY ./apps/api/composer.json /var/www/project/
 
 WORKDIR /var/www/project
 
