@@ -24,21 +24,24 @@ class LandingController extends AbstractController
         ];
 
         // We will get a set of names from external API - another container (acting as a microservice)
-        $namesResponse = $client->request(
-            'GET',
-            'http://nginx_api:80/names'
-        );
 
-        if ($namesResponse->getStatusCode() === 200) {
-            $names = json_decode($namesResponse->getContent());
-            sort($names);
-        } else {
-            $names = [];
-        }
+        // TODO - WIP
+
+//        $namesResponse = $client->request(
+//            'GET',
+//            'http://nginx_api:80/names'
+//        );
+//
+//        if ($namesResponse->getStatusCode() === 200) {
+//            $names = json_decode($namesResponse->getContent());
+//            sort($names);
+//        } else {
+//            $names = [];
+//        }
 
         return $this->render('landing/index.html.twig', [
             'random_greetings' => $greetings[array_rand($greetings)],
-            'names' => $names
+            // 'names' => $names
         ]);
     }
 }

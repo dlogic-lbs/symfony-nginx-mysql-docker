@@ -46,6 +46,29 @@ services:
       - "9001:9000"
     volumes:
       - ./apps/front:/var/www/project
+    tty: true
+    stdin_open: true
+
+  database:
+    image: mysql:8
+    container_name: database
+    networks:
+      - default_lan
+    ports:
+      - "43061:3306"
+    # NOTE: if you need to persist database data between docker builds uncomment the following 'volumes..'
+    #volumes:
+    #  - ./mysql:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_ROOT_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: maindb
+      MYSQL_ROOT_HOST: "%"
+    tty: true
+    stdin_open: true
 
   php_api:
     build:
@@ -58,23 +81,9 @@ services:
       - "9002:9000"
     volumes:
       - ./apps/api:/var/www/project
-    depends_on:
-      - database
-
-  database:
-    image: mysql:8
-    container_name: database
-    networks:
-      - default_lan
-    ports:
-      - "43061:3306"
-    volumes:
-      - ./mysql:/var/lib/mysql
-    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_USER: owner
-      MYSQL_PASSWORD: secret
-      MYSQL_DATABASE: maindb
-      MYSQL_ROOT_HOST: "%"
+    #depends_on:
+    #  - database
+    links:
+      - "database:database"
+    tty: true
+    stdin_open: true
