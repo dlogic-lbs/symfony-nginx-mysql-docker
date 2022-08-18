@@ -23,4 +23,5 @@ This repository shows a simple implementation of Symfony microservices within Do
 
 ## Other remarks
 This solution was built in Windows 11 using PHPStorm IDE and Docker Desktop.
+
 **NOTE** : there are 2 APP_SECRET values clearly listed within .env files of `apps` folders - I realise these are usually not to be displayed, but this was kept so just for the easiness of installation of the repo and its testing.
