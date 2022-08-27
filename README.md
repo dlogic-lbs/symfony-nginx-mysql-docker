@@ -12,7 +12,7 @@ Once everything is built up and ready, open your browser and navigate to http://
 -> 2 PHP 8.1 containers
 -> 1 MySQL 8 container
 
-This repository shows a simple implementation of Symfony microservices within Docker.
+This repository shows a simple implementation of Symfony microservices (via a simple API) within Docker.
 
 ## What could be added ?
 .. but wasn't due to shortness of time:
