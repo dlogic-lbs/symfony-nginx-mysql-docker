@@ -1,5 +1,5 @@
 ## How to run this repo ?
-Clone or download this repository to your local machine. CD into the root folder of the project and type ..
+Install and start up Docker Desktop, clone or download this repository to your local machine. CD into the root folder of the project and type ..
 ```
 dev_fresh.bat
 ```
